@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boucherie Moulec — Boucherie Halal Artisanale à Dreux</title>
     <meta name="description"
-        content="Boucherie halal artisanale à Dreux. Viandes de qualité certifiées halal, découpe sur mesure, commandes, traiteur et plats préparés maison.">
+        content="Boucherie halal artisanale à Dreux. Viandes de qualité certifiées halal, découpe sur mesure, commandes, traiteur et charcuterie maison.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -414,21 +414,93 @@
         }
 
         .g-item {
+            height: 300px;
+            perspective: 1200px;
+            cursor: pointer
+        }
+
+        .g-flip {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+            transform-style: preserve-3d
+        }
+
+        .g-item.flipped .g-flip {
+            transform: rotateY(180deg)
+        }
+
+        .g-face {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
             border-radius: 18px;
             overflow: hidden;
-            height: 280px;
             box-shadow: 0 10px 30px var(--ombre)
         }
 
-        .g-item img {
+        .g-front img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform .5s
+            display: block
         }
 
-        .g-item:hover img {
-            transform: scale(1.06)
+        .g-hint {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, .92);
+            color: var(--rouge);
+            font-size: .72rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .g-back {
+            transform: rotateY(180deg);
+            background: var(--encre);
+            color: var(--beurre);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 28px;
+            text-align: left
+        }
+
+        .g-back h4 {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: .3px
+        }
+
+        .g-back p {
+            font-size: .92rem;
+            color: var(--beige);
+            margin-bottom: 8px;
+            line-height: 1.5
+        }
+
+        .g-back .tagh {
+            display: inline-block;
+            background: var(--rouge);
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            align-self: flex-start;
+            margin-top: 6px
         }
 
         .gallery-note {
@@ -850,8 +922,8 @@
             <div class="reveal">
                 <span class="tag">Boucherie Halal · Artisan · Dreux</span>
                 <h1>Le goût du <em>vrai</em>, tous les jours.</h1>
-                <p>Viandes 100% halal sélectionnées avec soin, découpe sur mesure, commandes et plats préparés maison.
-                    La qualité d'un savoir-faire artisanal, à deux pas de chez vous.</p>
+                <p>Viandes 100% halal sélectionnées avec soin, découpe sur mesure, commandes et charcuterie maison. La
+                    qualité d'un savoir-faire artisanal, à deux pas de chez vous.</p>
                 <div class="btns">
                     <a href="tel:{{TEL_BRUT}}" class="btn btn-primary">📞 {{TÉLÉPHONE}}</a>
                     <a href="#infos" class="btn btn-ghost">Nous trouver</a>
@@ -877,15 +949,42 @@
     <section class="gallery">
         <div class="wrap">
             <div class="gallery-grid">
-                <div class="g-item reveal"><img
-                        src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop"
-                        alt="Pièce de viande de qualité" loading="lazy"></div>
-                <div class="g-item reveal"><img
-                        src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop&crop=entropy"
-                        alt="Viande rouge fraîche" loading="lazy"></div>
-                <div class="g-item reveal"><img
-                        src="https://images.unsplash.com/photo-1597417321971-45e034f7a993?w=900&q=80&auto=format&fit=crop"
-                        alt="Comptoir et présentation" loading="lazy"></div>
+                <div class="g-item reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="g-flip">
+                        <div class="g-face g-front"><img
+                                src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop"
+                                alt="Pièce de bœuf" loading="lazy"><span class="g-hint">+ d'infos</span></div>
+                        <div class="g-face g-back">
+                            <h4>Bœuf</h4>
+                            <p>Pièces sélectionnées : entrecôte, faux-filet, bavette, viande à griller ou à mijoter.</p>
+                            <span class="tagh">100% Halal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-item reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="g-flip">
+                        <div class="g-face g-front"><img
+                                src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop&crop=entropy"
+                                alt="Agneau et mouton" loading="lazy"><span class="g-hint">+ d'infos</span></div>
+                        <div class="g-face g-back">
+                            <h4>Agneau & mouton</h4>
+                            <p>Gigot, côtelettes, épaule, viande pour méchoui et tajine. Découpe sur demande.</p><span
+                                class="tagh">100% Halal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-item reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="g-flip">
+                        <div class="g-face g-front"><img
+                                src="https://images.unsplash.com/photo-1597417321971-45e034f7a993?w=900&q=80&auto=format&fit=crop"
+                                alt="Charcuterie halal" loading="lazy"><span class="g-hint">+ d'infos</span></div>
+                        <div class="g-face g-back">
+                            <h4>Charcuterie maison</h4>
+                            <p>Merguez, saucisses et viande hachée préparées sur place à base de bœuf, agneau et
+                                volaille.</p><span class="tagh">100% Halal</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <p class="gallery-note">Photos d'illustration — à remplacer par vos propres clichés</p>
         </div>
@@ -919,9 +1018,10 @@
                         demande.</p>
                 </div>
                 <div class="card reveal">
-                    <div class="ico">🥘</div>
-                    <h3>Plats préparés maison</h3>
-                    <p>Préparations cuisinées sur place chaque jour : prêtes à emporter, prêtes à savourer.</p>
+                    <div class="ico">🌭</div>
+                    <h3>Charcuterie halal</h3>
+                    <p>Merguez, saucisses, viande hachée et préparations maison à base de bœuf, d'agneau et de volaille.
+                        100% halal.</p>
                 </div>
                 <div class="card reveal">
                     <div class="ico">🏆</div>
@@ -1024,7 +1124,9 @@
                     <a href="tel:{{TEL_BRUT}}">{{TÉLÉPHONE}}</a>
                 </div>
             </div>
-            <div class="foot-bottom">© <span id="year"></span> Moulec — Tous droits réservés · Mentions légales</div>
+            <div class="foot-bottom">© <span id="year"></span> Boucherie Moulec — Tous droits réservés · <a
+                    href="mentions-legales.html" style="color:inherit;text-decoration:underline">Mentions légales</a>
+            </div>
         </div>
     </footer>
 
