@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucherie Moulec — Boucherie Halal Artisanale à Dreux</title>
+    <meta name="description"
+        content="Boucherie halal artisanale à Dreux. Viandes de qualité certifiées halal, découpe sur mesure, commandes, traiteur et plats préparés maison.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,800;1,400&family=Big+Shoulders+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rouge: #e23744;
+            --rouge-vif: #ff4d5e;
+            --rouge-sombre: #b81f2c;
+            --vert: #15a06a;
+            --beurre: #fff7ed;
+            --creme: #fffdf9;
+            --gris: #6b6360;
+            --encre: #1c1917;
+            --carte: #ffffff;
+            --bord: #f0e8df;
+            --beige: #e8ddd0;
+            --ombre: rgba(28, 25, 23, .10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            color: var(--encre);
+            background: var(--creme);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Big Shoulders Display', sans-serif;
+            line-height: .98;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            text-transform: uppercase
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        /* fond clair lumineux moderne */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 12% 0%, rgba(255, 77, 94, .07), transparent 38%),
+                radial-gradient(circle at 90% 100%, rgba(21, 160, 106, .06), transparent 42%),
+                var(--creme);
+            radial-gradient(circle at 80% 90%, rgba(217, 198, 165, .3), transparent 45%),
+            var(--creme);
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 245, 236, .92);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--encre);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 74px
+        }
+
+        .logo {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 800;
+            font-size: 1.75rem;
+            color: var(--rouge);
+            letter-spacing: .5px;
+            text-transform: uppercase
+        }
+
+        .logo span {
+            color: var(--encre)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: .95rem;
+            position: relative;
+            transition: color .2s
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--rouge);
+            transition: width .25s
+        }
+
+        .nav-links a:hover {
+            color: var(--rouge)
+        }
+
+        .nav-links a:hover::after {
+            width: 100%
+        }
+
+        .nav-cta {
+            background: var(--rouge);
+            color: var(--creme) !important;
+            padding: 10px 20px;
+            border-radius: 40px;
+            transition: background .2s
+        }
+
+        .nav-cta::after {
+            display: none !important
+        }
+
+        .nav-cta:hover {
+            background: var(--rouge-vif)
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            padding: 6px
+        }
+
+        .burger span {
+            width: 26px;
+            height: 3px;
+            background: var(--encre);
+            border-radius: 2px;
+            transition: .3s
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position: relative;
+            padding: 90px 0 80px;
+            overflow: hidden
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 50px;
+            align-items: center
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--rouge);
+            color: #fff;
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: .82rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 22px
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.2rem);
+            color: var(--encre);
+            margin-bottom: 20px
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--rouge)
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 480px;
+            margin-bottom: 32px;
+            color: #4a3a2e
+        }
+
+        .btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid var(--rouge);
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .btn-primary {
+            background: var(--rouge);
+            color: var(--creme)
+        }
+
+        .btn-primary:hover {
+            background: var(--rouge-vif);
+            border-color: var(--rouge-vif);
+            transform: translateY(-2px)
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--rouge)
+        }
+
+        .btn-ghost:hover {
+            background: var(--rouge);
+            color: var(--creme);
+            transform: translateY(-2px)
+        }
+
+        .hero-card {
+            background: var(--encre);
+            color: var(--beurre);
+            border-radius: 24px;
+            padding: 38px;
+            box-shadow: 0 24px 50px var(--ombre);
+            position: relative;
+        }
+
+        .hero-card h3 {
+            color: #fff;
+            font-size: 1.55rem;
+            margin-bottom: 6px
+        }
+
+        .hero-card .sub {
+            font-size: .95rem;
+            color: var(--rouge-vif);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px
+        }
+
+        .hero-hours {
+            list-style: none
+        }
+
+        .hero-hours li {
+            display: flex;
+            justify-content: space-between;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            font-size: .98rem
+        }
+
+        .hero-hours li:last-child {
+            border: 0
+        }
+
+        .hero-hours .closed {
+            opacity: .5
+        }
+
+        .hero-hours b {
+            font-weight: 700
+        }
+
+        .seal {
+            position: absolute;
+            top: -26px;
+            right: -18px;
+            width: 96px;
+            height: 96px;
+            background: var(--rouge);
+            color: var(--creme);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: .78rem;
+            font-weight: 600;
+            line-height: 1.2;
+            transform: rotate(-12deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: .92rem;
+            margin-bottom: 20px
+        }
+
+        .status .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #888;
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .status .dot::after {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: inherit;
+            opacity: .35;
+            animation: pulse 1.8s infinite
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: .4
+            }
+
+            70% {
+                transform: scale(2.2);
+                opacity: 0
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .status.open .dot {
+            background: #39b54a
+        }
+
+        .status.soon .dot {
+            background: #f2a30f
+        }
+
+        .status.closed .dot {
+            background: #d63434
+        }
+
+        /* ---------- SERVICES ---------- */
+        section {
+            padding: 86px 0
+        }
+
+        .gallery {
+            padding: 0 0 30px
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        .g-item {
+            border-radius: 18px;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 10px 30px var(--ombre)
+        }
+
+        .g-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s
+        }
+
+        .g-item:hover img {
+            transform: scale(1.06)
+        }
+
+        .gallery-note {
+            text-align: center;
+            margin-top: 14px;
+            font-size: .82rem;
+            color: var(--gris);
+            font-style: italic
+        }
+
+        @media(max-width:760px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .gallery-grid .g-item:last-child {
+                grid-column: 1/-1
+            }
+        }
+
+        .sec-head {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 56px
+        }
+
+        .sec-head .tag {
+            margin-bottom: 16px
+        }
+
+        .sec-head h2 {
+            font-size: clamp(2rem, 4vw, 2.9rem);
+            color: var(--encre)
+        }
+
+        .sec-head p {
+            margin-top: 14px;
+            color: #5a4636;
+            font-size: 1.05rem
+        }
+
+        .services {
+            background: linear-gradient(180deg, transparent, rgba(217, 198, 165, .25))
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px
+        }
+
+        .card {
+            background: var(--creme);
+            border: 1px solid var(--bord);
+            border-radius: 20px;
+            padding: 34px 28px;
+            transition: .28s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--rouge);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px var(--ombre)
+        }
+
+        .card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .card .ico {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--beurre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 1.6rem
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--encre);
+            margin-bottom: 10px
+        }
+
+        .card p {
+            color: #5a4636;
+            font-size: .97rem
+        }
+
+        /* ---------- A PROPOS ---------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center
+        }
+
+        .about-img {
+            background: var(--encre);
+            border-radius: 24px;
+            height: 440px;
+            overflow: hidden;
+            box-shadow: 0 20px 44px var(--ombre);
+            position: relative
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .about h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--encre);
+            margin-bottom: 20px
+        }
+
+        .about p {
+            color: #4a3a2e;
+            margin-bottom: 16px;
+            font-size: 1.05rem
+        }
+
+        .about .stats {
+            display: flex;
+            gap: 36px;
+            margin-top: 28px
+        }
+
+        .stat b {
+            display: block;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 2.2rem;
+            color: var(--rouge)
+        }
+
+        .stat span {
+            font-size: .9rem;
+            color: #5a4636
+        }
+
+        /* ---------- INFOS PRATIQUES ---------- */
+        .infos {
+            background: var(--encre);
+            color: var(--beurre)
+        }
+
+        .infos .sec-head h2 {
+            color: var(--creme)
+        }
+
+        .infos .sec-head p {
+            color: var(--beige)
+        }
+
+        .infos .tag {
+            background: var(--rouge);
+            color: var(--creme)
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: stretch
+        }
+
+        .info-block {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            padding: 34px
+        }
+
+        .info-block h3 {
+            color: var(--creme);
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .info-line {
+            display: flex;
+            gap: 14px;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            font-size: 1rem
+        }
+
+        .info-line:last-child {
+            border: 0
+        }
+
+        .info-line .k {
+            min-width: 90px;
+            font-weight: 600;
+            color: var(--beige)
+        }
+
+        .hours-full {
+            list-style: none
+        }
+
+        .hours-full li {
+            display: flex;
+            justify-content: space-between;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .hours-full li:last-child {
+            border: 0
+        }
+
+        .hours-full .closed {
+            opacity: .45
+        }
+
+        .map {
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 340px;
+            border: 1px solid rgba(255, 255, 255, .12)
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            border: 0;
+            filter: grayscale(.2)
+        }
+
+        .map-placeholder {
+            height: 100%;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .05);
+            text-align: center;
+            padding: 30px;
+            color: var(--beige);
+            font-style: italic
+        }
+
+        /* ---------- CTA BANDE ---------- */
+        .cta-band {
+            background: var(--rouge);
+            color: var(--creme);
+            text-align: center;
+            padding: 70px 0
+        }
+
+        .cta-band h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 14px;
+            color: var(--creme)
+        }
+
+        .cta-band p {
+            font-size: 1.1rem;
+            opacity: .92;
+            margin-bottom: 30px
+        }
+
+        .cta-band .btn {
+            border-color: var(--creme);
+            background: var(--creme);
+            color: var(--rouge)
+        }
+
+        .cta-band .btn:hover {
+            background: var(--encre);
+            color: var(--creme);
+            border-color: var(--encre)
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--encre);
+            color: var(--beige);
+            padding: 56px 0 28px
+        }
+
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px
+        }
+
+        .foot-grid h4 {
+            font-family: 'Big Shoulders Display', sans-serif;
+            color: var(--creme);
+            font-size: 1.2rem;
+            margin-bottom: 16px
+        }
+
+        .foot-grid a,
+        .foot-grid p {
+            display: block;
+            color: var(--beige);
+            opacity: .85;
+            padding: 5px 0;
+            font-size: .95rem
+        }
+
+        .foot-grid a:hover {
+            opacity: 1;
+            color: var(--rouge-vif)
+        }
+
+        .foot-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            padding-top: 22px;
+            text-align: center;
+            font-size: .85rem;
+            opacity: .6
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media(max-width:880px) {
+
+            .hero-grid,
+            .about-grid,
+            .info-grid,
+            .foot-grid {
+                grid-template-columns: 1fr
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 74px;
+                left: 0;
+                right: 0;
+                background: var(--creme);
+                flex-direction: column;
+                padding: 24px;
+                gap: 18px;
+                border-bottom: 2px solid var(--encre);
+                transform: translateY(-150%);
+                transition: transform .3s;
+                height: auto
+            }
+
+            .nav-links.open {
+                transform: translateY(0)
+            }
+
+            .burger {
+                display: flex
+            }
+
+            .seal {
+                width: 80px;
+                height: 80px;
+                font-size: .7rem;
+                top: -18px;
+                right: 6px
+            }
+
+            .about .stats {
+                gap: 24px
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s, transform .6s
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap nav">
+            <a href="#" class="logo">Moulec <span>· Boucherie</span></a>
+            <nav class="nav-links" id="menu">
+                <a href="#services">Services</a>
+                <a href="#apropos">La maison</a>
+                <a href="#infos">Horaires & accès</a>
+                <a href="tel:{{TEL_BRUT}}" class="nav-cta">Appeler</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div class="reveal">
+                <span class="tag">Boucherie Halal · Artisan · Dreux</span>
+                <h1>Le goût du <em>vrai</em>, tous les jours.</h1>
+                <p>Viandes 100% halal sélectionnées avec soin, découpe sur mesure, commandes et plats préparés maison.
+                    La qualité d'un savoir-faire artisanal, à deux pas de chez vous.</p>
+                <div class="btns">
+                    <a href="tel:{{TEL_BRUT}}" class="btn btn-primary">📞 {{TÉLÉPHONE}}</a>
+                    <a href="#infos" class="btn btn-ghost">Nous trouver</a>
+                </div>
+            </div>
+            <div class="hero-card reveal">
+                <div class="status" id="status">
+                    <span class="dot" id="statusDot"></span>
+                    <span id="statusText">…</span>
+                </div>
+                <h3>Nos horaires</h3>
+                <p class="sub">Ouvert 7 jours sur 7</p>
+                <ul class="hero-hours">
+                    <li><b>Lun – Ven</b><span>9h–13h · 14h–19h</span></li>
+                    <li><b>Samedi</b><span>9h–13h · 14h–19h</span></li>
+                    <li><b>Dimanche</b><span>9h–13h · 14h–19h</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="gallery">
+        <div class="wrap">
+            <div class="gallery-grid">
+                <div class="g-item reveal"><img
+                        src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop"
+                        alt="Pièce de viande de qualité" loading="lazy"></div>
+                <div class="g-item reveal"><img
+                        src="https://images.unsplash.com/photo-1632154023554-c2975e9be348?w=900&q=80&auto=format&fit=crop&crop=entropy"
+                        alt="Viande rouge fraîche" loading="lazy"></div>
+                <div class="g-item reveal"><img
+                        src="https://images.unsplash.com/photo-1597417321971-45e034f7a993?w=900&q=80&auto=format&fit=crop"
+                        alt="Comptoir et présentation" loading="lazy"></div>
+            </div>
+            <p class="gallery-note">Photos d'illustration — à remplacer par vos propres clichés</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="tag">Ce que nous proposons</span>
+                <h2>Tous nos services</h2>
+                <p>Un seul endroit pour la viande du quotidien comme pour vos grandes occasions.</p>
+            </div>
+            <div class="cards">
+                <div class="card reveal">
+                    <div class="ico">🔪</div>
+                    <h3>Découpe & vente</h3>
+                    <p>Bœuf, veau, agneau, mouton et volailles, certifiés halal. Découpe à la demande selon vos envies
+                        et vos recettes.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="ico">📋</div>
+                    <h3>Commande sur mesure</h3>
+                    <p>Pièces spéciales, grandes quantités, demandes particulières : réservez par téléphone, on prépare
+                        tout pour vous.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="ico">🍽️</div>
+                    <h3>Traiteur</h3>
+                    <p>Buffets, plateaux et prestations pour vos repas de famille, fêtes et événements. Devis sur
+                        demande.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="ico">🥘</div>
+                    <h3>Plats préparés maison</h3>
+                    <p>Préparations cuisinées sur place chaque jour : prêtes à emporter, prêtes à savourer.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="ico">🏆</div>
+                    <h3>Qualité & traçabilité halal</h3>
+                    <p>Viandes choisies auprès d'éleveurs de confiance, certifiées halal, dans le respect de la
+                        traçabilité et du produit.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="ico">🎁</div>
+                    <h3>Conseils & idées</h3>
+                    <p>Cuisson, accords, quantités : nos bouchers vous accompagnent pour réussir chaque plat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section class="about" id="apropos">
+        <div class="wrap about-grid">
+            <div class="about-img reveal"><img
+                    src="https://images.unsplash.com/photo-1597417321971-45e034f7a993?w=1100&q=80&auto=format&fit=crop"
+                    alt="Comptoir de la Boucherie Moulec" loading="lazy"></div>
+            <div class="reveal">
+                <span class="tag">La maison Moulec</span>
+                <h2>Un savoir-faire qui se transmet</h2>
+                <p>{{PRÉSENTATION : votre histoire, vos valeurs. Ex. : « Boucherie halal installée à Dreux, nous mettons
+                    un point d'honneur à proposer une viande 100% halal d'exception, choisie et travaillée avec passion,
+                    dans le respect de nos clients et de leurs convictions. »}}</p>
+                <p>Chaque pièce est sélectionnée, préparée et présentée avec exigence, pour vous offrir le meilleur,
+                    tous les jours.</p>
+                <div class="stats">
+                    <div class="stat"><b>7j/7</b><span>ouvert toute la semaine</span></div>
+                    <div class="stat"><b>100%</b><span>viande halal</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFOS PRATIQUES -->
+    <section class="infos" id="infos">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <span class="tag">Nous rendre visite</span>
+                <h2>Horaires & accès</h2>
+                <p>Retrouvez-nous facilement, on vous attend.</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-block reveal">
+                    <h3>📍 Coordonnées</h3>
+                    <div class="info-line"><span class="k">Adresse</span><span>11 Place du 8 mai 1945<br>28100
+                            Dreux</span></div>
+                    <div class="info-line"><span class="k">Téléphone</span><a href="tel:{{TEL_BRUT}}">{{TÉLÉPHONE}}</a>
+                    </div>
+                    <h3 style="margin-top:28px">🕐 Horaires</h3>
+                    <ul class="hours-full">
+                        <li><span>Lundi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Mardi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Mercredi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Jeudi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Vendredi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Samedi</span><span>9h–13h · 14h–19h</span></li>
+                        <li><span>Dimanche</span><span>9h–13h · 14h–19h</span></li>
+                    </ul>
+                </div>
+                <div class="map reveal">
+                    <iframe
+                        src="https://maps.google.com/maps?q=11%20Place%20du%208%20mai%201945%2C%2028100%20Dreux&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Plan d'accès Boucherie Moulec"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="wrap reveal">
+            <h2>Une commande, une question ?</h2>
+            <p>Appelez-nous, nous préparons tout pour vous.</p>
+            <a href="tel:{{TEL_BRUT}}" class="btn">📞 {{TÉLÉPHONE}}</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <h4>Moulec · Boucherie</h4>
+                    <p>Boucherie halal artisanale à Dreux.<br>Qualité, savoir-faire et proximité.</p>
+                </div>
+                <div>
+                    <h4>Liens</h4>
+                    <a href="#services">Services</a>
+                    <a href="#apropos">La maison</a>
+                    <a href="#infos">Horaires & accès</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>11 Place du 8 mai 1945, 28100 Dreux</p>
+                    <a href="tel:{{TEL_BRUT}}">{{TÉLÉPHONE}}</a>
+                </div>
+            </div>
+            <div class="foot-bottom">© <span id="year"></span> Moulec — Tous droits réservés · Mentions légales</div>
+        </div>
+    </footer>
+
+    <script>
+        // menu mobile
+        const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+        burger.addEventListener('click', () => menu.classList.toggle('open'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+        // année auto
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // reveal au scroll
+        const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // ---- voyant d'ouverture (7j/7, 9h-13h et 14h-19h) ----
+        (function () {
+            const el = document.getElementById('status'), txt = document.getElementById('statusText');
+            if (!el) return;
+            // créneaux en minutes depuis minuit
+            const slots = [[9 * 60, 13 * 60], [14 * 60, 19 * 60]];
+            function fmt(m) { const h = Math.floor(m / 60), mn = m % 60; return mn ? h + 'h' + String(mn).padStart(2, '0') : h + 'h'; }
+            function refresh() {
+                const now = new Date(); const m = now.getHours() * 60 + now.getMinutes();
+                let state = 'closed', label = 'Fermé';
+                // ouvert ?
+                for (const [a, b] of slots) {
+                    if (m >= a && m < b) {
+                        if (b - m <= 30) { state = 'soon'; label = 'Ferme à ' + fmt(b); }
+                        else { state = 'open'; label = 'Ouvert · ferme à ' + fmt(b); }
+                    }
+                }
+                // si fermé, réouvre bientôt ?
+                if (state === 'closed') {
+                    let next = null;
+                    for (const [a] of slots) { if (a > m && (next === null || a < next)) next = a; }
+                    if (next !== null) {
+                        if (next - m <= 60) { state = 'soon'; label = 'Réouvre à ' + fmt(next); }
+                        else { label = 'Fermé · ouvre à ' + fmt(next); }
+                    } else {
+                        label = 'Fermé · ouvre demain à ' + fmt(slots[0][0]);
+                    }
+                }
+                el.className = 'status ' + state;
+                txt.textContent = label;
+            }
+            refresh(); setInterval(refresh, 60000);
+        })();
+    </script>
+</body>
+
+</html>
